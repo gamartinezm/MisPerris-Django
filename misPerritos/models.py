@@ -1,7 +1,7 @@
 from django.db import models
 
 class RescatadosPost(models.Model):
-    fotografia = models.ImageField(upload_to='Foto')
+    fotografia = models.ImageField(upload_to='misPerritos\Fotos')
     nombre = models.CharField(max_length=50)
     raza = models.CharField(max_length=50)
     descripcion = models.CharField(max_length=300)
