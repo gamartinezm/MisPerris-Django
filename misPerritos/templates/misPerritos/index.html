@@ -1,0 +1,63 @@
+{% extends 'misPerritos/base_misperris.html' %}
+{% load staticfiles %}
+{% block principal %}
+<div class="bg-ligth">
+    <div class="container">
+        <div class="row">
+            <article class="col-12 col-md-6 py-5 end-xs">                                
+                    <h2>Rescate</h2>                                
+                    <p class="subtitulo">Etapa Uno</p>
+                    <hr>                            
+                <p>Rescatamos perros en situación de peligro y/o abandono. Los rehabilitamos y los preparamos para buscarles un hogar.</p>
+                <img src="{% static 'img/rescate.jpg' %}" alt="Perro Negro">   
+            </article>
+
+            <article class="col-12 col-md-6 py-5">
+                <img src="{% static 'img/crowfunding2.jpg' %}" alt="">
+                <h2>CROWDFUNDING</h2>
+                <p class="subtitulo">Financiamiento</p>
+                <hr>
+                <p>Sigue nuestras redes sociales para informarte acerca de las diversas campañas y actividades que realizamos para obtener financiamiento para seguir ayudando.</p>     
+            </article>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <button href="#demo"  data-toggle="collapse" class="btn-lg btn-block" type="button" name="button">CAMPAÑAS</button>
+            <div id="demo" class="collapse">
+                    <div class="container" id="galeria">
+                        <div class="row">
+                                <div class="col-12 col-md-4  py-5" id="foto_1">
+                                    <img src="{% static 'Galería/perro_gall_1.jpg' %}" class="img-responsive" alt="" title="Hola, mi nombre es lucas, me encanta correr y morder mis juguetes" >
+                                </div>
+                                <div class="col-12 col-md-4  py-5" id="foto_2">
+                                    <img src="{% static 'Galería/perro_gall_2.jpg' %}" class="img-responsive" alt="" title="Hola, soy Max, soy un perrito muy divertido y cariñoso, adóptame!">
+                                </div>
+                                <div class="col-12 col-md-4  py-5" id="foto_3">
+                                    <img src="{% static 'Galería/perro_gall_3.jpg' %}" class="img-responsive" alt="" title="Soy Roco, me encanta salir de paseo y me encanta bañarme">
+                                </div>
+                                <div class="col-12 col-md-4  py-5" id="foto_4">
+                                    <img src="{% static 'Galería/perro_gall_4.jpg' %}" class="img-responsive" alt="" title="Mi nombre es Tom, y tengo mucho amor para entregarte">
+                                </div>
+                                <div class="col-12 col-md-4  py-5" id="foto_5">
+                                    <img src="{% static 'Galería/perro_gall_5.jpg' %}" class="img-responsive" alt="" title="Yo soy Bobby, soy un perrito muy tranquilo y dormilón">
+                                </div>
+                                <div class="col-12 col-md-4  py-5" id="foto_6">
+                                    <img src="{% static 'Galería/perro_gall_6.jpg' %}" class="img-responsive" alt="" title="Hola, mi nombre es Luna y amo compartir con niños y en familia">
+                                </div>
+                                <div class="col-12 col-md-4  py-5" id="foto_7">
+                                    <img src="{% static 'Galería/perro_gall_7.jpg' %}" class="img-responsive" alt="" title="Hola, Yo soy Brutus, y tengo mucho amor para entregar, me encanta comer mucho, dormir y jugar">
+                                </div>
+                                <div class="col-12 col-md-4  py-5" id="foto_8">
+                                    <img src="{% static 'Galería/perro_gall_8.jpg' %}" class="img-responsive" alt="" title="Hola, Yo soy Walter, soy muy obediente y tranquilo">
+                                </div>
+                                <div class="col-12 col-md-4  py-5" id="foto_9">
+                                    <img src="{% static 'Galería/perro_gall_9.jpg' %}" class="img-responsive" alt="" title="Hola, soy Rumpy, me encantría tener una familia, soy muy feliz.">
+                                </div>
+                        </div>
+                    </div>
+            </div>
+    </div>
+</div>
+{% endblock %}
