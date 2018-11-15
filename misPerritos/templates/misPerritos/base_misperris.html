@@ -2,46 +2,39 @@
 <!doctype html>
 <html>
     <head>
-
         <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        
-        <!-- flexboxgrid CSS -->
-        <link rel="stylesheet" href="css/flexboxgrid.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- flexboxgrid CSS -->
+    <link rel="stylesheet" href="css/flexboxgrid.min.css">
+    <!--**********  Fancybox  **********-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.1/jquery.fancybox.min.css" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="CSS/estilos.css">
+    <!-- Adding Google Font Open Sans -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+    <!-- Adding Font Awesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Adding Flexbox Grid library -->
+    <link rel="stylesheet" href="css/flexboxgrid.min.css" type="text/css">
+    <!-- Adding Helper Classes -->
+    <link rel="stylesheet" href="css/helper.css" type="text/css" />
+    <!-- relacion c/ js -->
+    <script src="main.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/lib/bootstrap.min.css">
+    <script src="/lib/jquery-1.12.2.min.js"></script>
+    <script src="/lib/bootstrap.min.js"></script>
 
-        <!--**********  Fancybox  **********-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.1/jquery.fancybox.min.css" />
+    <title>Mis perris</title>
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico.png' %}" type="image/x-icon">
 
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="CSS/estilos.css">
-         <!-- Adding Google Font Open Sans -->
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
-        <!-- Adding Font Awesome Icons -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-        <!-- Adding Flexbox Grid library -->
-        <link rel="stylesheet" href="css/flexboxgrid.min.css" type="text/css">
-        <!-- Adding Helper Classes -->
-        <link rel="stylesheet" href="css/helper.css" type="text/css" />
-        <!-- relacion c/ js -->
-        <script src="main.js"></script>
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}"> <!--Ruta para el Archivo Principal de Estilo-->
+    <script src="{% static 'js/prefix.js' %}" type="test/javascript"></script><!--Script para asegurar que en todos los navegadores y dispositivos el sitio se vea igual-->
 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/lib/bootstrap.min.css">
-        <script src="/lib/jquery-1.12.2.min.js"></script>
-        <script src="/lib/bootstrap.min.js"></script>
-
-
-        <title>Mis perris</title>
-        <link rel="shortcut icon" href="img/favicon.ico.png" type="image/x-icon">
-
-
-        <link rel="stylesheet" href="{% static 'css/estilos.css' %}"> <!--Ruta para el Archivo Principal de Estilo-->
-        <script src="{% static 'js/prefix.js' %}" type="test/javascript"></script><!--Script para asegurar que en todos los navegadores y dispositivos el sitio se vea igual-->
-
-        
-
+    {% block extrahead %} 
+    {% endblock %}
 
     </head>
 
@@ -61,7 +54,7 @@
                     <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                         <ul class="navbar-nav" id="menu_inicio">
                             <li class="nav-item" >
-                                <a class="nav-link" href="Index.html" >Inicio</a> <!--<span class="sr-only">(current)</span> -->
+                                <a class="nav-link" href="index.html" >Inicio</a> <!--<span class="sr-only">(current)</span> -->
                             </li>
                             <li class="nav-item" >
                                 <a class="nav-link" href="somos.html" >Quiénes somos</a>
@@ -75,16 +68,20 @@
                         </ul>
                     </div>
                 </nav>
-                
+
+
         </header>
 
 
         {% block principal %}
         {% endblock %}
 
+
+        
         <footer class="container" id="piepagina" >
                     <p>Desarrollo Web y Mobile</p>
         </footer>
+        
 
 
     </body>
@@ -94,5 +91,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 
-
+    {% block extrajs %}
+    {% endblock %}
 </html>
