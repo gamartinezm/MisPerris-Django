@@ -1,0 +1,81 @@
+{% extends 'misPerritos/base_misperris.html' %}
+{% load staticfiles %}
+{% block principal %}
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="well well-sm">
+                    <form class="form-horizontal" method="post">
+                        <fieldset>
+                            <legend class="text-center header">Contáctanos</legend>
+    
+                            <div class="form-group">
+                                <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                                <div class="col-md-8">
+                                    <input required id="fname" name="name" type="text" placeholder="Nombre completo" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                                <div class="col-md-8">
+                                    <input id="rut" name="rut" type="text" placeholder="RUN" oninput="checkRut(this)" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                                <div class="col-md-8">
+                                    <input required id="fechaN" name="fechaN" type="date" max="2000-12-31" placeholder="Fecha de nacimiento" class="form-control">
+                                </div>
+                            </div>
+    
+                            <div class="form-group">
+                                <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
+                                <div class="col-md-8">
+                                    <input id="correo" name="correo" type="email" placeholder="Correo eléctronico" class="form-control">
+                                </div>
+                            </div>
+    
+                            <div required class="form-group">
+                                <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
+                                <div class="col-md-8">
+                                    <input id="fono" name="fono" type="number" placeholder="Teléfono de contacto" class="form-control">
+                                </div>
+                            </div>
+    
+                            <div class="form-group"> <!-- State Button -->
+                                <span required class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
+                                <select class="form-control col-md-8" id="regiones"></select>                   
+                            </div>
+
+                            <div class="form-group"> <!-- State Button -->
+                                <span required class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
+                                <select class="form-control col-md-8" id="comunas"></select>                   
+                            </div>
+
+                            <div>
+                                <span required class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
+                                <select  class="form-control col-md-8">
+                                    <option selected>Seleccionar tipo de vivienda</option>
+                                    <option>Casa con patio grande</option>
+                                    <option>Casa con patio pequeño</option>
+                                    <option>Casa sin patio</option>
+                                    <option>Departamento</option>
+                                </select>
+                            </div>
+                            
+                            
+    
+                            <div class="form-group">
+                                <div class="col-md-12 text-center">
+                                    <button type="submit" id="enviar" class="btn btn-primary btn-lg">Enviar</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}

@@ -1,6 +1,50 @@
 {% extends 'misPerritos/base_misperris.html' %}
 {% load staticfiles %}
 {% block principal %}
+
+<header class="container" id="principal" >
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100" src="{% static 'img/perro.png' %}" alt="First slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="{% static 'img/perro_adoptado.jpg' %}" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="{% static 'img/perro_adoptado_2.jpg' %}" alt="Third slide">
+        </div>
+    </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+<div class="row banner-info text-center" id="nose">
+        <div class="center-xs col-12 col-md-4 py-5">
+            <a class="phone" href="tel:+56998765431">+56 9 98765431</a>
+        </div>
+        <article class="center-xs col-12 col-md-4 py-5">
+            <h5 class="headline">Rescate y adopción de perros callejeros</h5>
+        </article>
+        <div class="center-xs col-12 col-md-4 py-5">
+            <div class="shared-panel">                                
+                <a href="URL-FACEBOOK" target="_blank"> <img class="sociales" alt="siguenos en facebook" src="http://1.bp.blogspot.com/-PrByV4NBlSs/UiXnD1FEFnI/AAAAAAAABws/dUhvcAdYRiY/s1600/Facebook+alt+1.png" title="siguenos en facebook"  /></a>	
+                <a href="URL-Google+" target="_blank"><img class="sociales" alt="siguenos en Google+"  src="http://3.bp.blogspot.com/-fnL839vxuao/UiXnFfyN17I/AAAAAAAABxc/VvcXJlZ65Ko/s1600/Google%252B+alt.png" title="siguenos en Google+"  /></a>                                
+                <a href="URL-Instagram" target="_blank"><img class="sociales" alt="sígueme en Instagram"  src="http://2.bp.blogspot.com/-kQop92g4NsM/UidPJ06ER1I/AAAAAAAACAA/0mj0jK5hhXM/s1600/instagram2.png" title="sígueme en Instagram"/></a>                                
+                <a href="URL-Twitter" target="_blank"><img class="sociales" alt="siguenos en Twitter"  src="http://3.bp.blogspot.com/-wlwaJJG-eOY/UiXnHS2jLsI/AAAAAAAAByQ/I2tLyZDLNL4/s1600/Twitter+NEW.png" title="siguenos en Twitter" /></a>                                
+                <a target="_blank" class="shared ce" id="sml" title="Email"></a>                                        
+            </div>
+        </div>
+
+    </div>
+</header>
+
 <div class="bg-ligth">
     <div class="container">
         <div class="row">
