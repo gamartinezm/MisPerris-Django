@@ -1,6 +1,4 @@
 from django.shortcuts import render
-from django.utils import timezone
-from .models import RescatadosPost
 
 from django.http import HttpResponse
 
@@ -9,11 +7,6 @@ from django.http import HttpResponse
 #def index(request):
 #	return HttpResponse("Index")
 
-
-
-def rescatados_list(request):
-    rescatadosPosts = RescatadosPost.objects.filter()
-    return render(request, 'misPerritos/rescatados_list.html', {'rescatadosPosts' : rescatadosPosts})
 
 def index(request):    
     return render(request, 'misPerritos/index.html', {})

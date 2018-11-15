@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import RescatadosPost
+#from .models import Mascota
 
-admin.site.register(RescatadosPost)
+#admin.site.register(Mascota)
 
 # Register your models here.
