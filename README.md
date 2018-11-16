@@ -2,11 +2,11 @@
 
 Proyecto Mis Perris
 
-Alumno: Jorge Fuica
+Alumno: 
 
-Asignatura: DWY4101
+Asignatura: 
 
-Sección: 003D
+Sección: 
 
 
 

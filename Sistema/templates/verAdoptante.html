@@ -5,11 +5,14 @@
 {% endblock %}
 
 {% block Content %}
+
+			<div class="container">
 				{% if adoptante %}
+
 				<table id="datatable"> <!-- Tabla de datos del adoptante -->
 					<tr>
-						<th>RUN</th>
-						<td>{{ adoptante.run }}</td>
+						<th >RUN</th>
+						<td  >{{ adoptante.run }}</td>
 					</tr>
 					<tr>
 						<th>Nombre completo</th>
@@ -39,4 +42,5 @@
 				{% else %}
 				<h2>Lo sentimos, el adoptante que desea visualizar no existe.</h2>
 				{% endif %}
+				</div>
 {% endblock %}

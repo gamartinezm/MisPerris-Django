@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block Content %}
+			<div class="container">
 				{% if mascota %}
 				<table class="datatable"> <!-- Tabla de datos de la mascota -->
 					<tr>
@@ -36,4 +37,5 @@
 				{% else %}
 				<h2>Lo sentimos, la mascota que desea visualizar no existe.</h2>
 				{% endif %}
+			</div>
 {% endblock %}

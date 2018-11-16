@@ -25,10 +25,11 @@
 
 /* Se definen las reglas de las imágenes de cada columna de la galería */
 #galeria .imgcol .pic img {
-	margin: 4px 0px;
-	object-fit: cover; /* La imagen se verá con la relación de aspecto normal aunque se esté modificando su tamaño */
-	transition: all ease 750ms;
-	width: 100%;
+    margin: 4px 0px;
+    /* object-fit: cover; */
+    transition: all ease 750ms;
+    width: 300px;
+    height: 300px;
 }
 
 /* Reglas para el estado para cada mascota */
@@ -44,5 +45,5 @@
 
 /* Se aplican estos atributos cuando el cursor esté encima de cada imagen de la galería */
 #galeria .imgcol img:hover {
-	transform: scale(1.25); /* La imagen se agranda */
+	transform: scale(1.00); /* La imagen se agranda */
 }

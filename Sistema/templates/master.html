@@ -11,41 +11,43 @@
 		<!-- Aquí se realizan las cargas adicionales de archivos requeridos para cada página del sitio -->
 
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- flexboxgrid CSS -->
-    <link rel="stylesheet" href="css/flexboxgrid.min.css">
-    <!--**********  Fancybox  **********-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.1/jquery.fancybox.min.css" />
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="CSS/estilos.css">
-    <!-- Adding Google Font Open Sans -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
-    <!-- Adding Font Awesome Icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <!-- Adding Flexbox Grid library -->
-    <link rel="stylesheet" href="css/flexboxgrid.min.css" type="text/css">
-    <!-- Adding Helper Classes -->
-    <link rel="stylesheet" href="css/helper.css" type="text/css" />
-    <!-- relacion c/ js -->
-    <script src="main.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/lib/bootstrap.min.css">
-    <script src="/lib/jquery-1.12.2.min.js"></script>
-    <script src="/lib/bootstrap.min.js"></script>
+        <!-- flexboxgrid CSS -->
+        <link rel="stylesheet" href="{% static 'css/flexboxgrid.min.css' %}">
+        <!--**********  Fancybox  **********-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.1/jquery.fancybox.min.css" />
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="CSS/estilos.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css' %}">
+        <!-- Adding Google Font Open Sans -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+        <!-- Adding Font Awesome Icons -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <!-- Adding Flexbox Grid library -->
+        <link rel="stylesheet" href="{% static 'css/flexboxgrid.min.css' %}" type="text/css">
+        <!-- Adding Helper Classes -->
+        <link rel="stylesheet" href="{% static 'css/helper.css' %}" type="text/css" />
+        <!-- relacion c/ js -->
+        <script src="main.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/lib/bootstrap.min.css">
+        <script src="/lib/jquery-1.12.2.min.js"></script>
+        <script src="/lib/bootstrap.min.js"></script>
 
 
-    <link rel="shortcut icon" href="{% static 'img/favicon.ico.png' %}" type="image/x-icon">
+        <link rel="shortcut icon" href="{% static 'img/favicon.ico.png' %}" type="image/x-icon">
 
-    <link rel="stylesheet" href="{% static 'css/estilos.css' %}"> <!--Ruta para el Archivo Principal de Estilo-->
-    <script src="{% static 'js/prefix.js' %}" type="test/javascript"></script><!--Script para asegurar que en todos los navegadores y dispositivos el sitio se vea igual-->
+        <link rel="stylesheet" href="{% static 'css/estilos.css' %}"> <!--Ruta para el Archivo Principal de Estilo-->
+        <script src="{% static 'js/prefix.js' %}" type="test/javascript"></script><!--Script para asegurar que en todos los navegadores y dispositivos el sitio se vea igual-->
 
-		{% block Imports %}
-		{% endblock %}
+    		{% block Imports %}
+    		{% endblock %}
 	</head>
-	<body>
-        <div class="container" id="principal" >
 
-            <header> <!-- Encabezado de la página -->
+	<body>
+
+        <header class="container" id="principal" >
+
                 <div id="account-bar"> <!-- Barra de cuentas de usuario -->
                     <nav> <!-- Barra que contiene los enlaces -->
                         {% if not user.is_authenticated %}
@@ -64,12 +66,12 @@
                         {% endif %}
                     </nav>
                 </div>
-            </header>
+
 
             <nav class="navbar navbar-expand-lg navbar-light" id="pp">           
                 <figure class="logo-header">
-                    <a href="{% url 'indice' %}" title="">
-                        <img src="{% static 'images/logo.png' %}" alt="" />
+                    <a href="/" title="">
+                        <img src="/static/images/logo.png" alt="" />
                     </a>    
                 </figure>
 
@@ -95,19 +97,20 @@
                 </div>
             </nav>
 
-            {% block Carrusel %}
-            {% endblock %}
 
-        </div>
+        </header>
 
-			<section id="main">
-				{% block Content %}
-				{% endblock %}
-			</section>
+        
+
+			{% block Content %}
+			{% endblock %}
+
 
         <footer class="container" id="piepagina" >
-                    <p>Desarrollo Web y Mobile</p>
+                        <p>Desarrollo Web y Mobile</p>
         </footer>
-		</div>
 	</body>
 </html>
+
+
+
