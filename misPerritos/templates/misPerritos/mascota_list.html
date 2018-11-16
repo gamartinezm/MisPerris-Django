@@ -1,0 +1,13 @@
+{% extends 'misPerritos/base_misperris.html' %}
+
+{% block principal %}
+
+{% for mascota in mascotas %}
+        <div class="post">
+            <div class="date">
+                {{ mascota.nombre }}
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}

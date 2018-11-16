@@ -55,7 +55,8 @@ ROOT_URLCONF = 'newMisPerris.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [],
+        #'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -76,14 +77,21 @@ WSGI_APPLICATION = 'newMisPerris.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'BDMisPerris',                      
-        'USER': 'postgres',
-        'PASSWORD': 'gmart005',
-        'HOST': 'localhost',
-        'PORT': 5432,
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#        'NAME': 'BDMisPerris',                      
+#        'USER': 'postgres',
+#        'PASSWORD': 'gmart005',
+#        'HOST': 'localhost',
+#        'PORT': 5432,
+#    }
+#}
 
 
 # Password validation
@@ -124,3 +132,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
