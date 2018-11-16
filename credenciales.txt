@@ -1,0 +1,15 @@
+Administrador
+=============
+Usuario: admin
+Contraseña: admin
+
+
+Adoptantes
+==========
+#1
+Usuario: jo.fuica
+Contraseña: 19517510-1
+
+#2
+Usuario: ju.perez
+Contraseña: 14438746-5

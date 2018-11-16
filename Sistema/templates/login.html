@@ -1,0 +1,26 @@
+{% extends "master.html" %}
+{% load staticfiles %}
+{% block Imports %}
+		<link rel="stylesheet" type="text/css" href="{% static 'css/forms.css' %}" /> <!-- Carga estilos para los formularios -->
+		<script type="text/javascript" src="{% static 'js/validadores.js' %}"></script> <!-- Carga los validadores comunes -->
+		<script type="text/javascript" src="{% static 'js/validadorLogin.js' %}"></script> <!-- Carga los validadores de inicio de sesión -->
+{% endblock %}
+
+{% block Content %}<!-- Sección de inicio de sesión -->
+				<h2 align="center">Iniciar sesión</h2>     
+				<form id="login" method="POST">
+					{% csrf_token %}
+					{% if fail %}<p>El usuario que ingresó no es válido.</p>{% endif %}
+					<table class="tableform">
+						{% for campo in form %}
+						<tr>
+							<th width="20%">{{ campo.label_tag }}</th>
+							<td width="60%">{{ campo }}</td>
+							<td width="20%"><p id="error_{{ campo.name }}" class="error">{{ campo.errors }}</p></td>
+						</tr>
+						{% endfor %}
+					</table>
+					<input type="submit" class="campo boton" value="Entrar" />
+					<a align="center"  href="{% url 'recuperarPassword' %}">Recuperar contraseña</a>
+				</form>
+{% endblock %}

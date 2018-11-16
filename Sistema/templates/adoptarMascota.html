@@ -1,0 +1,39 @@
+{% extends "master.html" %}
+{% load staticfiles %}
+{% block Imports %}
+		<link rel="stylesheet" type="text/css" href="{% static 'css/forms.css' %}" /> <!-- Se carga este archivo para estilizar la tabla -->
+{% endblock %}
+
+{% block Content %}<!-- Sección de adopción de mascotas -->
+			<div class="container">
+				<h2 align="center">Adoptar mascotas</h2>
+				{% if mascotas %}
+				<table class="list">
+					<tr>
+						<th width="20%">Foto</th>
+						<th width="10%">Nombre</th>
+						<th width="30%">Raza dominante</th>
+						<th width="20%">Descripción</th>
+						<th width="20%">Adoptar</th>
+					</tr>
+					{% for m in mascotas.object_list %}
+					<tr>
+						<td><img src="{{ m.foto.url }}" width="250px" alt="Foto de {{ m.nombre }}" /></td>
+						<td>{{ m.nombre }}</td>
+						<td>{{ m.raza }}</td>
+						<td>{{ m.descripcion }}</td>
+						<td><a href="{% url 'adoptarMascota' pk=m.codigoMascota %}"><img class="action" src="{% static 'images/adopt.png' %}" width="24px" alt="Adoptar" /></a></td>
+					</tr>
+					{% endfor %}
+				</table>
+
+				<nav id="paginator">
+					<div id="previous">{% if mascotas.has_previous %}<a href="?page={{ mascotas.previous_page_number }}">Anterior</a>{% endif %}</div>
+					<div id="page"><p>Página {{ mascotas.number }} de {{ mascotas.paginator.num_pages }}</p></div>
+					<div id="next">{% if mascotas.has_next %}<a href="?page={{ mascotas.next_page_number }}">Siguiente</a>{% endif %}</div>
+				</nav>
+				{% else %}
+				<p>No hay mascotas disponibles para adoptar.</p>
+				{% endif %}
+			</div>
+{% endblock %}

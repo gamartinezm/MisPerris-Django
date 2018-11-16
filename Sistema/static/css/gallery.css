@@ -1,0 +1,48 @@
+/* Se define este selector para la sección de galería */
+#galeria {
+	background-color: #85D4B7;
+	display: flex; /* Modo flexbox */
+	flex-flow: row wrap; /* El flujo de elementos irá en fila y seguirá fluyendo hacia abajo */
+	justify-content: space-between; /* Las columnas se justificarán rellenando los espacios entre estos según el ancho de la galería */
+	padding: 0px 8px;
+	height: auto;
+	width: 100%; /* Toma todo el ancho del navegador web */
+}
+
+/* Se define las columnas de imágenes para la galería */
+#galeria .imgcol {
+	display: flex; /* Modo flexbox */
+	flex-direction: column; /* El flujo de elementos irá en columnas */
+	justify-content: space-between; /* Los elementos se justificarán rellenando los espacios entre estos según la columna de imágenes más larga */
+	padding: 4px 0px;
+	width: 32%; /* Toma una tercera parte del tamaño de la sección de galería */
+}
+
+/* Se definen reglas para el contenedor de una imagen para cada mascota */
+#galeria .imgcol .pic {
+	position: relative;
+}
+
+/* Se definen las reglas de las imágenes de cada columna de la galería */
+#galeria .imgcol .pic img {
+	margin: 4px 0px;
+	object-fit: cover; /* La imagen se verá con la relación de aspecto normal aunque se esté modificando su tamaño */
+	transition: all ease 750ms;
+	width: 100%;
+}
+
+/* Reglas para el estado para cada mascota */
+#galeria .imgcol .pic .status {
+	background-color: rgba(32, 32, 32, 0.5);
+	color: white;
+	font-size: 18px;
+	font-weight: bold;
+	position: absolute;
+	bottom: 16px;
+	right: 16px;
+}
+
+/* Se aplican estos atributos cuando el cursor esté encima de cada imagen de la galería */
+#galeria .imgcol img:hover {
+	transform: scale(1.25); /* La imagen se agranda */
+}

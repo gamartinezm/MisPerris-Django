@@ -1,0 +1,60 @@
+{% extends "master.html" %}
+{% load staticfiles %}
+{% block Imports %}
+		<link rel="stylesheet" type="text/css" href="{% static 'css/forms.css' %}" /> <!-- Carga estilos para los formularios -->
+		<script type="text/javascript" src="{% static 'js/validadores.js' %}"></script> <!-- Carga los validadores comunes -->
+		<script type="text/javascript" src="{% static 'js/validadorAdoptante.js' %}"></script> <!-- Carga los validadores para el formulario de registro de adoptante -->
+{% endblock %}
+
+{% block Content %}
+			<div class="container">
+				<h2 align="center">Agregar adoptante</h2>
+					<form id="reg-adoptante" method="POST">
+						{% csrf_token %}
+						<table class="tableform">
+							{% for campo in form %}
+							<tr>
+								<th width="20%">{{ campo.label_tag }}</th>
+								<td width="60%">{{ campo }}</td>
+								<td width="20%"><p id="error_{{ campo.id_for_label }}" class="error">{{ campo.errors }}</p></td>
+							</tr>
+							{% endfor %}
+						</table>
+						<input type="submit" class="campo boton" value="Agregar adoptante" />
+					</form>
+				</div>
+
+			<div class="container">
+				<h2 align="center">Lista de Adoptantes</h2>
+					{% if adoptantes %}
+					<table class="list">
+						<tr>
+							<th>RUN</th>
+							<th>Nombre completo</th>
+							<th>Correo electrónicio</th>
+							<th>Acciones</th>
+						</tr>
+						{% for a in adoptantes.object_list %}
+						<tr>
+							<td>{{ a.run }}</td>
+							<td>{{ a.nombres }} {{ a.apPaterno }} {{ a.apMaterno }}</td>
+							<td>{{ a.usuario.email }}</td>
+							<td>
+								<a href="{% url 'verAdoptante' pk=a.codigoAdoptante %}"><img class="action" src="{% static 'images/view.png' %}" width="24px" alt="Ver" /></a>
+								<a href="{% url 'actualizarAdoptante' pk=a.codigoAdoptante %}"><img class="action" src="{% static 'images/edit.png' %}" width="24px" alt="Editar" /></a>
+								<a href="{% url 'eliminarAdoptante' pk=a.codigoAdoptante %}"><img class="action" src="{% static 'images/delete.png' %}" width="24px" alt="Eliminar" /></a>
+							</td>
+						</tr>
+						{% endfor %}
+					</table>
+
+					<nav id="paginator">
+						<div id="previous">{% if adoptantes.has_previous %}<a href="?page={{ adoptantes.previous_page_number }}">Anterior</a>{% endif %}</div>
+						<div id="page"><p>Página {{ adoptantes.number }} de {{ adoptantes.paginator.num_pages }}</p></div>
+						<div id="next">{% if adoptantes.has_next %}<a href="?page={{ adoptantes.next_page_number }}">Siguiente</a>{% endif %}</div>
+					</nav>
+					{% else %}
+					<p>No hay adoptantes</p>
+					{% endif %}
+				</div>
+{% endblock %}

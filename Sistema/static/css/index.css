@@ -1,0 +1,85 @@
+#bottom-bar {
+	align-items: center;
+	background-color: #85D4B7;
+}
+
+/* Se define un marco que contendrá las imágenes del carrusel */
+#carrusel .foto_perro {
+	height: 500px;
+	width: 100%;
+}
+
+/* Reglas para las imágenes del carrusel */
+#carrusel .foto_perro img {
+	height: 100%;
+	object-fit: cover; /* Mantiene la relación de aspecto original de las imágenes */
+	width: inherit; /* Toma el tamaño del contenedor */
+}
+
+/* Sección de articulos */
+#articulos {
+	display: flex; /* Modo flexbox */
+	width: 100%; /* Toma todo el ancho de la sección principal */
+}
+
+/* Reglas para los artículos */
+#articulos article {
+	margin: 15px;
+	width: 50%; /* Toma la mitad del ancho de la sección que contiene los artículos */
+}
+
+/* Reglas para los títulos de los artículos */
+#articulos article h2, h3 {
+	text-transform: uppercase; /* Transforma a mayúsculas el texto */
+}
+
+/* Regla para el tercer nivel del título */
+#articulos article h3 {
+	color: grey;
+}
+
+#articulos article hr {
+	border: 2px solid grey;
+	margin: 10px 0px;
+	width: 50px;
+}
+
+/* Regla para las imágenes de los artículos */
+#articulos article img {
+	width: 50%;
+}
+
+/* Para cada artículo impar se alinean los elementos a la derecha */
+#articulos article:nth-child(odd) {
+	text-align: right;
+}
+
+/* Reglas para los botones */
+.boton {
+	background-color: white;
+	border: 3px solid black;
+	border-radius: 3px; /* Borde romado */
+	font-size: 16px;
+	font-weight: bold; /* Texto en negrita */
+	padding: 8px;
+	transition-duration: 400ms; /* Duración del efecto de transición */
+}
+
+/* Se aplica esta regla cuando el cursor esté encima de un botón */
+.boton:hover {
+	background-color: #D0D0D0;
+}
+
+/* Se aplican las reglas responsive cuando el ancho del navegador o pantalla sea de hasta 800 píxeles */
+@media screen and (max-width: 800px) {
+    /* Responsive para la sección principal */
+	#articulos {
+		flex-direction: column; /* El flujo de elementos irá en columnas */
+	}
+
+	/* Responsive para los artículos */
+	#articulos article {
+		margin: 0px 0px 40px 0px;
+		width: 100%; /* Los artículos tomará todo el ancho del navegador o dispositivo */
+    }
+}

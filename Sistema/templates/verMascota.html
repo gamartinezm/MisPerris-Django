@@ -1,0 +1,39 @@
+{% extends "master.html" %}
+{% load staticfiles %}
+{% block Imports %}
+		<link rel="stylesheet" type="text/css" href="{% static 'css/viewer.css' %}" /> <!-- Carga los estilos de la tabla de datos -->
+{% endblock %}
+
+{% block Content %}
+				{% if mascota %}
+				<table class="datatable"> <!-- Tabla de datos de la mascota -->
+					<tr>
+						<th width="30%">Foto</th>
+						<th width="70%" colspan="2">Información</th>
+					</tr>
+					<tr>
+						<td rowspan="5"><img src="{{ mascota.foto.url }}" alt="Foto de {{ mascota.nombre }}" /></td>
+						<th>Código</th>
+						<td>{{ mascota.codigoMascota }}</td>
+					</tr>
+					<tr>
+						<th>Nombre</th>
+						<td>{{ mascota.nombre }}</td>
+					</tr>
+					<tr>
+						<th>Raza dominante</th>
+						<td>{{ mascota.raza }}</td>
+					</tr>
+					<tr>
+						<th>Descripción</th>
+						<td>{{ mascota.descripcion }}</td>
+					</tr>
+					<tr>
+						<th>Estado</th>
+						<td>{{ mascota.estado }}</td>
+					</tr>
+				</table>
+				{% else %}
+				<h2>Lo sentimos, la mascota que desea visualizar no existe.</h2>
+				{% endif %}
+{% endblock %}

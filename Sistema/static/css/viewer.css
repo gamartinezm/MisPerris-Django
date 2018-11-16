@@ -1,0 +1,25 @@
+/* Reglas para tablas de datos */
+.datatable {
+	border-collapse: collapse;
+	font-size: 18px;
+	overflow-x: auto;
+}
+
+/* Reglas para las columnas y celdas */
+.datatable th, .datatable td {
+	border: 2px solid darkcyan;
+	padding: 8px;
+}
+
+/* Énfasis para las columnas */
+.datatable th {
+	background-color: darkcyan;
+	color: white;
+}
+
+/* Especificaciones para las imágenes */
+.datatable td img {
+	object-fit: cover;
+	height: 200px;
+	width: 200px;
+}

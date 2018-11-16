@@ -1,0 +1,151 @@
+/* Reglas para todos los elementos de una página */
+* {
+	box-sizing: border-box; /* Ajusta los elementos de acuerdo el tamaño de su contenedor, incluyendo los espaciados */
+	font-family: "SF Pro Display", "Calibri", "Arial"; /* Familias de tipografías */
+	margin: 0px; /* Sin espacios de margen */
+	padding: 0px; /* Sin espacios internos */
+}
+
+/* Se definen las reglas del cuerpo de página */
+body {
+	background-color: darkcyan;
+}
+
+/* Caja que contiene las secciones de una página web */
+#contenedor {
+	background-color: white;
+	display: flex; /* Modo flexbox */
+	flex-direction: column; /* El flujo de elementos irá hacia abajo */
+	margin: auto; /* El contenedor se centra */
+	max-width: 1200px; /* El contenedor tiene un ancho máximo de 1200 píxeles */
+	width: 80%;
+}
+
+/* Estilo para el encabezado de página */
+header {
+	width: 100%; /* Toma todo el ancho del contenedor */
+}
+
+/* Reglas para la barra de cuentas de usuario del encabezado de página */
+#account-bar {
+	align-items: flex-end; /* Los elementos se alinean a la derecha */
+	background-color: rgb(0, 160, 160);
+	display: flex;
+	padding: 16px;
+	width: 100%; /* Toma todo el ancho del encabezado */
+}
+
+#account-bar a {
+	color: white;
+	padding: 8px;
+	text-decoration: none;
+	transition-duration: 400ms;
+}
+
+#account-bar a:hover {
+	background-color: rgb(0, 192, 192);
+}
+
+/* Especificaciones para la barra principal del encabezado de página */
+#mainbar {
+	align-items: center; /* Los elementos se centran */
+	background-color: #85D4B7;
+	display: flex; /* Modo flexbox */
+	flex-flow: row wrap; /* El flujo de elementos irá en fila y seguirá fluyendo hacia abajo */
+	justify-content: space-between; /* Los elementos se justificarán rellenando los espacios entre estos */
+	width: 100%; /* Toma todo el ancho del encabezado */
+}
+
+/* Reglas para el logo del sitio web */
+#mainbar .logo {
+	padding: 10px;
+	width: 250px;
+}
+
+/* Regla espefífica para la imagen del contenedor logo */
+#mainbar .logo img {
+	width: 100%;
+}
+
+/* Reglas para la barra de navegación del sitio */
+#mainbar nav {
+	display: flex; /* Modo flexbox */
+	flex-direction: row; /* El flujo de los elementos irá en fila */
+}
+
+/* Reglas para cada enlace de la barra de navegación del sitio */
+#mainbar nav a {
+	background-color: #6DCCAA;
+	color: white;
+	font-size: 24px;
+	flex-grow: 1;
+	padding: 10px;
+	text-align: center; /* Textos centrados */
+	text-decoration: none; /* Sin ninguna decoración del texto */
+	transition-duration: 400ms; /* Duración del efecto de transición */
+	user-select: none; /* Permite que no se seleccionen los textos de los enlaces */
+}
+
+/* Se aplica este bloque cuando el cursor esté encima de un enlace */
+#mainbar nav a:hover {
+	background-color: #A1DEC8;
+}
+
+/* Sección de enlaces a redes sociales */
+.sociales {
+	margin: auto;
+}
+
+/* Regla específica para cada imagen de las redes sociales */
+.sociales img {
+	margin: 4px;
+}
+
+/* Sección principal de la página */
+#main {
+	display: flex; /* Modo flexbox */
+	flex-direction: column; /* Los elementos de la sección principal irán distribuyendo hacia abajo */
+	padding: 10px;
+	width: 100%; /* Toma todo el ancho del contenedor */
+}
+
+/* Se definen las reglas para el pié de página */
+footer {
+	background-color: #E6E6E6;
+	padding: 5px 15px;
+	width: 100%; /* Toma todo el ancho del contenedor */
+}
+
+/* Se aplican las reglas responsive cuando el ancho del navegador o pantalla sea de hasta 1024 píxeles */
+@media screen and (max-width: 1024px) {
+	/* Responsive para el contenedor */
+	#contenedor {
+		width: 100%; /* Toma todo el ancho del navegador o dispositivo */
+	}
+}
+
+/* Se aplican las reglas responsive cuando el ancho del navegador o pantalla sea de hasta 800 píxeles */
+@media screen and (max-width: 800px) {
+	/* Responsive para la barra principal del encabezado de página */
+	#mainbar {
+		flex-direction: column; /* El flujo de elementos irá en columnas */
+	}
+
+	/* Responsive para la barra de navegación */
+	#mainbar nav {
+		width: 100%; /* Toma todo el ancho del navegador o dispositivo */
+	}
+}
+
+/* Se aplican las reglas responsive cuando el ancho del navegador o pantalla sea de hasta 600 píxeles */
+@media screen and (max-width: 600px) {
+	/* Responsive para la barra de navegación */
+	#mainbar nav {
+		flex-direction: column; /* El flujo de elementos irá en columnas */
+	}
+
+	/* Responsive para los enlaces de la barra de navegación */
+	#mainbar nav a {
+		margin: 1px 0px;
+	}
+}

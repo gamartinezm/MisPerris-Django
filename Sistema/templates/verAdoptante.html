@@ -1,0 +1,42 @@
+{% extends "master.html" %}
+{% load staticfiles %}
+{% block Imports %}
+		<link rel="stylesheet" type="text/css" href="{% static 'css/viewer.css' %}" /> <!-- Carga los estilos de la tabla de datos -->
+{% endblock %}
+
+{% block Content %}
+				{% if adoptante %}
+				<table id="datatable"> <!-- Tabla de datos del adoptante -->
+					<tr>
+						<th>RUN</th>
+						<td>{{ adoptante.run }}</td>
+					</tr>
+					<tr>
+						<th>Nombre completo</th>
+						<td>{{ adoptante.nombres}} {{ adoptante.apPaterno }} {{ adoptante.apMaterno }}</td>
+					</tr>
+					<tr>
+						<th>Fecha de nacimiento</th>
+						<td>{{ adoptante.fechaNacimiento }}</td>
+					</tr>
+					<tr>
+						<th>Correo electrónico</th>
+						<td>{{ adoptante.usuario.email }}</td>
+					</tr>
+					<tr>
+						<th>Teléfono</th>
+						<td>{{ adoptante.telefono }}</td>
+					</tr>
+					<tr>
+						<th>Residencia</th>
+						<td>{{ adoptante.ciudad.nombreCiudad }}, Región {{ adoptante.ciudad.region.nombreRegion }}</td>
+					</tr>
+					<tr>
+						<th>Tipo de vivienda</th>
+						<td>{{ adoptante.tipoVivienda }}</td>
+					</tr>
+				</table>
+				{% else %}
+				<h2>Lo sentimos, el adoptante que desea visualizar no existe.</h2>
+				{% endif %}
+{% endblock %}

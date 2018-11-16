@@ -1,0 +1,31 @@
+{% extends "master.html" %}
+{% load staticfiles %}
+{% block Imports %}
+		<link rel="stylesheet" type="text/css" href="{% static 'css/forms.css' %}" /> <!-- Carga estilos para los formularios -->
+		<script type="text/javascript" src="{% static 'js/validadores.js' %}"></script> <!-- Carga los validadores comunes -->
+		<script type="text/javascript" src="{% static 'js/validadorMascota.js' %}"></script> <!-- Carga los validadores para el formulario de actualización de mascota -->
+{% endblock %}
+
+{% block Content %}
+				{% if form %}<!-- Formulario de edición de mascotas -->
+			<div class="container">
+				<h2 align="center">Editando mascota</h2>
+				<form id="reg-mascota" method="POST" enctype="multipart/form-data">
+					{% csrf_token %}
+					<table class="tableform">
+						{% for campo in form %}
+						<tr>
+							<th width="20%">{{ campo.label_tag }}</th>
+							<td width="60%">{{ campo }}</td>
+							<td width="20%"><p id="error_{{ campo.name }}" class="error">{{ campo.errors }}</p></td>
+						</tr>
+						{% endfor %}
+					</table>
+					<input type="submit" class="campo boton" value="Actualizar" />
+				</form>
+				{% else %}
+				<h2 align="center">Mascota no existente</h2>
+				<p align="center">Lo sentimos, la mascota que desea editar no existe.</p>
+				{% endif %}
+			</div>
+{% endblock %}

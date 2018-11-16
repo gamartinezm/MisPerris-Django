@@ -1,0 +1,156 @@
+/* Reglas para cada formulario del sitio web */
+form {
+	display: flex; /* Modo flexbox */
+	flex-direction: column; /* Los elementos de un formulario irán descendiendo */
+	margin: auto; /* Cada formulario se centra */
+	width: 70%;
+}
+
+.tableform {
+	width: 100%;
+}
+
+.tableform th, .tableform td {
+	padding: 4px;
+}
+
+.tableform th {
+	text-align: right;
+}
+
+/* Se definen las reglas para todos los campos de un formulario */
+.campo {
+	background-color: white;
+	border: 2px solid darkcyan;
+	border-radius: 16px; /* Bordes romados */
+	font-size: x-large; /* Tamaño grande de letra */
+	overflow: hidden; /* Permite que los elementos dentro de un campo no se sobresalgan */
+	outline: none; /* Desaparece las líneas azules alrededor de los campos que dejan los navegadores */
+	padding: 8px;
+	transition-duration: 400ms; /* Duración del efecto de transición */
+	width: 100%;
+}
+
+/* Se aplica este bloque cuando el cursor esté encima de un campo */
+.campo:hover {
+	border-color: #00C0C0; /* Cambia el color del borde */
+}
+
+/* Estas reglas se aplican cuando se está interactuando con un campo */
+.campo:focus {
+	border-color: royalblue; /* Cambia el color del borde */
+}
+
+/* Reglas para todos las listas desplegables */
+.combobox {
+	background: url("images/down_normal.png") no-repeat right white; /* Reemplaza el botón nativo para abrir la lista por uno personalizado */
+	background-size: 35px; /* Se define el tamaño del botón personalizado */
+	display: inline-block; /* permite que el botón personalizado permanezca en el mismo lugar que el texto */
+	-webkit-appearance: none; /* Elimina el botón nativo del combobox */
+}
+
+/* Se definen los tamaños para los elementos de las listas desplegables */
+.combobox optgroup, option {
+	font-size: medium;
+}
+
+/* Se aplica este bloque cuando el cursor esté encima de un combobox */
+.combobox:hover {
+	background-image: url("images/down_hover.png"); /* Cambia la imagen del botón personalizado por otro */
+}
+
+/* Estas reglas ocurren cuando se esté interactuando con un combobox */
+.combobox:focus {
+	background-image: url("images/down_click.png"); /* Cambia la imagen del botón personalizado por otro */
+}
+
+/* Se definen los atributos para los botones */
+.boton {
+	background-color: darkcyan;
+	border: none; /* Sin borde */
+	color: white;
+	margin: 4px auto;
+	max-width: 500px; /* A medida de haya más ancho de pantalla el botón tendrá máximo 500 píxeles de ancho */
+	width: 70%;
+}
+
+/* Se aplica esto cuando el cursor esté encima de un botón */
+.boton:hover {
+	background-color: #00C0C0;
+}
+
+/* Se aplica esto cuando se hace clic en un botón */
+.boton:active {
+	background-color: royalblue;
+}
+
+/* Esto permite que el botón spinner desaparezca de los campos tipo fecha,
+   dejando sólo el botón desplegable para seleccionar la fecha */
+[type="date"]::-webkit-inner-spin-button {
+	display: none;
+}
+
+.list {
+	border-collapse: collapse;
+	font-size: 18px;
+	width: 100%;
+}
+
+.list th, .list td {
+	border: 2px solid darkcyan;
+	padding: 8px;
+}
+
+.list th {
+	background-color: darkcyan;
+	color: white;
+}
+
+.list tr:nth-child(even) {
+	background-color: #F2F2F2;
+}
+
+.list tr:hover {
+	background-color: lightcyan;
+}
+
+.list td img {
+	object-fit: cover;
+}
+
+.action {
+	height: 24px;
+	width: 24px;
+}
+
+#paginator {
+	display: flex;
+	font-size: 18px;
+	justify-content: space-between;
+	margin: 8px 0px;
+	text-align: center;
+	width: 100%;
+}
+
+#paginator #previous, #paginator #page, #paginator #next {
+	width: 33%;
+}
+
+#paginator a {
+	background-color: darkcyan;
+	color: white;
+	padding: 4px;
+	text-decoration: none;
+	transition-duration: 400ms;
+}
+
+#paginator a:hover {
+	background-color: cyan;
+}
+
+/* Se aplican las reglas responsive cuando el ancho del navegador o pantalla sea de hasta 600 píxeles */
+@media screen and (max-width: 600px) {
+	form {
+		width: 100%;
+	}
+}

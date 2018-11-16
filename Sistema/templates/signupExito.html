@@ -1,0 +1,7 @@
+{% extends "master.html" %}
+{% block Content %}<!-- Mensaje de éxito de registro de usuario -->
+			<div class="container">
+				<h2 align="center">Registro exitoso</h2>
+				<p align="center">Usted ya se encuentra registrado en la plataforma, se le enviará un correo con las credenciales para que pueda ingresar desde <a href="{% url 'login' %}">aquí</a>.</p>
+			</div>
+{% endblock %}
