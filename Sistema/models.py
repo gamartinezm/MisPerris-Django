@@ -11,7 +11,7 @@ class Region(models.Model):
 
 class Ciudad(models.Model):
 	codigoCiudad = models.CharField(primary_key = True, max_length = 15)
-	nombreCiudad = models.CharField(max_length = 20)
+	nombreCiudad = models.CharField(max_length = 30)
 	region = models.ForeignKey(Region, on_delete = models.DO_NOTHING)
 
 	def __str__(self):
@@ -27,7 +27,7 @@ class Adoptante(models.Model):
 	fechaNacimiento = models.DateField()
 	telefono = models.IntegerField(null = True)
 	ciudad = models.ForeignKey(Ciudad, on_delete = models.DO_NOTHING)
-	tipoVivienda = models.CharField(max_length = 20)
+	tipoVivienda = models.CharField(max_length = 30)
 
 class Mascota(models.Model):
 	codigoMascota = models.AutoField(primary_key = True)
